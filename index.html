@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Neon Dashboard</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 6px;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #00f7ff;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+<body class="bg-gray-900 text-white">
+
+    <div class="flex h-screen">
+        <!-- Sidebar -->
+        <div class="w-64 bg-gray-800 p-5 fixed inset-y-0 left-0 transform -translate-x-full transition-transform duration-300 md:translate-x-0 z-50" id="sidebar">
+            <h2 class="text-2xl font-bold text-neon">⚡ Vrishin Rajpurohit Dashboard</h2>
+            <ul class="mt-6 space-y-4">
+                <li><a href="#" class="block px-4 py-2 rounded-md bg-gray-700 hover:bg-neon transition">Home</a></li>
+                <li><a href="#" class="block px-4 py-2 rounded-md hover:bg-neon transition">Settings</a></li>
+                <li><a href="#" class="block px-4 py-2 rounded-md hover:bg-neon transition">Users</a></li>
+                <li><a href="#" class="block px-4 py-2 rounded-md hover:bg-neon transition">Reports</a></li>
+            </ul>
+        </div>
+
+        <!-- Main Content -->
+        <div class="flex-1 p-6 md:ml-64 transition-all">
+            <button class="text-neon md:hidden mb-4" onclick="toggleSidebar()">☰ Menu</button>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Card 1 -->
+                <div class="bg-gray-800 p-6 rounded-xl shadow-lg transform hover:scale-105 transition duration-300">
+                    <h3 class="text-lg font-semibold text-neon">📊 Statistics</h3>
+                    <p class="mt-4 text-gray-300">Overview of current performance.</p>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="bg-gray-800 p-6 rounded-xl shadow-lg transform hover:scale-105 transition duration-300">
+                    <h3 class="text-lg font-semibold text-neon">🔔 Notifications</h3>
+                    <p class="mt-4 text-gray-300">Important updates and reminders.</p>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="bg-gray-800 p-6 rounded-xl shadow-lg transform hover:scale-105 transition duration-300">
+                    <h3 class="text-lg font-semibold text-neon">🛠 Settings</h3>
+                    <p class="mt-4 text-gray-300">Customize your experience.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function toggleSidebar() {
+            const sidebar = document.getElementById("sidebar");
+            sidebar.classList.toggle("-translate-x-full");
+        }
+    </script>
+
+    <style>
+        .text-neon { color: #00f7ff; }
+        .hover\:bg-neon:hover { background-color: #00f7ff; color: black; }
+    </style>
+
+</body>
+</html>
